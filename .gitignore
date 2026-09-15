@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.db
+.coverage
+htmlcov/
+
+# Runtime data (see data/*/.gitkeep — dirs are tracked, contents aren't)
+data/database/*.db
+data/uploads/*
+data/projects/*
+!data/uploads/.gitkeep
+!data/projects/.gitkeep
+!data/database/.gitkeep
+
+# Env
+.env
+.env.local
+!.env.example
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
