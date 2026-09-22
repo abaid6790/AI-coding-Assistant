@@ -1139,13 +1139,13 @@ screenshots/
 Then display them here:
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="48%"/>
+  <img src="screenshots/Dashboard.png" width="48%"/>
   <img src="screenshots/workspace.png" width="48%"/>
 </p>
 
 <p align="center">
   <img src="screenshots/ai-chat.png" width="48%"/>
-  <img src="screenshots/analysis-dashboard.png" width="48%"/>
+  <img src="screenshots/output.png" width="48%"/>
 </p>
 
 > Replace these filenames with the actual screenshots present in the repository.
