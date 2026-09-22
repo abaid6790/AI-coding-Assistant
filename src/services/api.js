@@ -112,6 +112,12 @@ export const api = {
   generateTestsForCode: (payload) => request("/code/tests", { method: "POST", body: payload }),
   generateDocumentation: (payload) => request("/code/documentation", { method: "POST", body: payload }),
 
+  // Run Code (Phase 13) — a 200 response can still mean the CODE
+  // failed (success: false in the body); request() only throws for a
+  // genuine HTTP-level failure (missing code, unsupported language,
+  // auth, rate limit).
+  runCode: (payload) => request("/code/run", { method: "POST", body: payload }),
+
   // Code-intelligence history & analysis dashboard (Phase 9)
   getProjectAnalysis: (projectId) => request(`/projects/${projectId}/analysis`),
   listProjectReviews: (projectId) => request(`/projects/${projectId}/reviews`),

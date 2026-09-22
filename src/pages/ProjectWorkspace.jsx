@@ -5,6 +5,7 @@ import { useToast } from "../context/ToastContext.jsx";
 import Modal from "../components/common/Modal.jsx";
 import ProjectExplorer from "../components/code/ProjectExplorer.jsx";
 import CodeEditor from "../components/code/CodeEditor.jsx";
+import OutputPanel from "../components/code/OutputPanel.jsx";
 import ChatPanel from "../components/chat/ChatPanel.jsx";
 import AiActionsModal from "../components/code/AiActionsModal.jsx";
 import DiffReviewModal from "../components/code/DiffReviewModal.jsx";
@@ -33,6 +34,12 @@ export default function ProjectWorkspace() {
   const [draftContent, setDraftContent] = useState("");
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
+
+  // Run Code (Phase 14). runResult is null until the first run of this
+  // session — the output panel only takes up space once there's
+  // something to show, keeping the editor maximized by default.
+  const [runResult, setRunResult] = useState(null);
+  const [fixingWithAi, setFixingWithAi] = useState(false);
 
   const [showNewFile, setShowNewFile] = useState(false);
   const [newFilename, setNewFilename] = useState("");
@@ -86,6 +93,7 @@ export default function ProjectWorkspace() {
       setActiveFile(data.file);
       setDraftContent(data.file.content);
       setDirty(false);
+      setRunResult(null); // don't show a previous file's stale run output
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Could not open file.");
     }
@@ -104,6 +112,63 @@ export default function ProjectWorkspace() {
       toast.error(err instanceof ApiError ? err.message : "Could not save file.");
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleRun = async () => {
+    if (!activeFile) return;
+    // Clears previous output the moment a new run starts, per spec —
+    // runs on whatever's currently in the editor (draftContent),
+    // unsaved changes included, same as every other AI action here.
+    setRunResult({ status: "running", stdout: "", stderr: "", exitCode: null, timedOut: false, truncated: false });
+    try {
+      const data = await api.runCode({ language: activeFile.language, code: draftContent });
+      setRunResult({
+        status: data.success ? "success" : "error",
+        stdout: data.stdout,
+        stderr: data.stderr,
+        exitCode: data.exit_code,
+        timedOut: data.timed_out,
+        truncated: data.truncated,
+      });
+    } catch (err) {
+      // A genuine request failure (missing code, unsupported language,
+      // rate limited) rather than a failed run — surface it as a toast
+      // like any other request failure, and don't leave a stale
+      // "running" panel on screen.
+      setRunResult(null);
+      toast.error(err instanceof ApiError ? err.message : "Could not run the code.");
+    }
+  };
+
+  const handleFixWithAI = async () => {
+    // Reuses the exact same AI infrastructure and diff-review flow as
+    // every other AI-suggested change in the app (AiActionsModal's
+    // Debug tab calls this identical endpoint) — this is wiring, not a
+    // new AI system. The debugging request carries the context the
+    // spec asks for: language, current code, and the execution error
+    // that was just captured by Run Code.
+    if (!activeFile || !runResult) return;
+    setFixingWithAi(true);
+    try {
+      const data = await api.debugCode({
+        language: activeFile.language,
+        code: draftContent,
+        error_message: runResult.stderr,
+      });
+      if (data.corrected_code) {
+        setDiffProposal(data.corrected_code);
+      } else {
+        // The model didn't return a clean corrected_code (see
+        // analysis_service.debug_code's JSON-parse fallback) — nothing
+        // to diff, so surface its explanation instead of silently
+        // doing nothing.
+        toast.info(data.explanation || "The AI couldn't produce a corrected version — try Analyze → Debug for more detail.");
+      }
+    } catch (err) {
+      toast.error(err instanceof ApiError ? err.message : "Could not get a fix from the AI.");
+    } finally {
+      setFixingWithAi(false);
     }
   };
 
@@ -287,8 +352,23 @@ export default function ProjectWorkspace() {
                   }}
                   onSendSelection={(text) => setPendingSelection(text)}
                   onOpenAiActions={() => setShowAiActions(true)}
+                  onRun={handleRun}
+                  running={runResult?.status === "running"}
                 />
               </div>
+              {runResult && (
+                <OutputPanel
+                  status={runResult.status}
+                  stdout={runResult.stdout}
+                  stderr={runResult.stderr}
+                  exitCode={runResult.exitCode}
+                  timedOut={runResult.timedOut}
+                  truncated={runResult.truncated}
+                  onClose={() => setRunResult(null)}
+                  onFixWithAI={handleFixWithAI}
+                  fixingWithAi={fixingWithAi}
+                />
+              )}
             </>
           ) : (
             <div className="flex flex-1 items-center justify-center p-6">
@@ -405,6 +485,7 @@ export default function ProjectWorkspace() {
             setDraftContent(diffProposal);
             setDirty(true);
             setDiffProposal(null);
+            setRunResult(null); // the code just changed — the previous run's output is stale
             toast.info("Applied — remember to Save");
           }}
           onReject={() => setDiffProposal(null)}

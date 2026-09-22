@@ -1,107 +1,479 @@
-# 🤖 AI Coding Assistant
+<div align="center">
 
-> An AI-powered development workspace for managing projects, editing code, chatting with AI, reviewing and improving code, generating tests and documentation, and analyzing code quality — all from a unified web application.
+<img src="https://capsule-render.vercel.app/api?type=waving&height=230&text=AI%20Coding%20Assistant&fontAlign=50&fontAlignY=40&color=0:0f172a,50:1e293b,100:0f766e&fontColor=ffffff&fontSize=48&animation=fadeIn&desc=AI-powered%20coding%20workspace%20built%20with%20Flask%20%2B%20React%20%2B%20Monaco&descAlignY=65&descSize=16" width="100%"/>
 
-**AI Coding Assistant** is a full-stack development environment built with **React, Vite, Tailwind CSS, Flask, SQLAlchemy, and provider-agnostic AI services**.
+<br>
 
-The project implements the complete feature set from **Phases 0–11**, including authentication, enforced multi-user data isolation, project and file management, a Monaco code editor, Gemini key rotation, contextual AI chat, seven AI-powered code-intelligence features, Monaco diff review, code analysis, command palette, toast notifications, CSRF protection, file validation, and a comprehensive automated test suite.
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=2800&pause=900&color=38BDF8&center=true&vCenter=true&width=850&lines=Write+Code+%E2%80%A2+Run+AI+Code+Intelligence+%E2%80%A2+Review+%E2%80%A2+Debug;Monaco-based+Editor+%2B+AI+Chat+%2B+Project+Management;Multi-user+Isolation+%2B+CSRF+Protection+%2B+File+Validation;Gemini+Key+Rotation+%2B+Provider-Agnostic+AI+Architecture" />
+
+<br>
+
+<p>
+  <img src="https://img.shields.io/badge/Status-Complete-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Phases-0--11-38BDF8?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Tests-135%20Passing-22C55E?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge"/>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-3.x-000000?style=flat-square&logo=flask&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-Vite-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Monaco_Editor-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white"/>
+</p>
+
+<br>
+
+**A full-stack AI coding workspace for managing projects, editing code, chatting with AI, reviewing code, generating tests and documentation, analyzing code quality, and applying AI-assisted changes through a real diff-review workflow.**
+
+</div>
 
 ---
 
-## ✨ Highlights
+## ✦ What Is This?
 
-* 🔐 Complete authentication system
-* 👥 Enforced multi-user data isolation
-* 📁 Project and file management
-* 📝 Virtual folder system
-* 💻 Monaco-based code editor
-* 🤖 Provider-agnostic AI architecture
-* 🔑 Gemini API key rotation
+**AI Coding Assistant** is a full-stack development workspace designed around one idea:
+
+> **Keep the developer in control while AI assists with the code.**
+
+The application combines:
+
+* 🗂️ Project & file management
+* 🧑‍💻 Monaco-based code editing
+* 🤖 AI coding assistance
 * 💬 Context-aware AI chat
-* 🧠 Seven AI code-intelligence features
-* 🔍 Code review and quality analysis
-* 📊 Code Analysis Dashboard
-* 🔀 Monaco Diff Editor for AI changes
-* 🧪 AI-generated tests
-* 📚 AI-generated documentation
-* 🔔 Toast notifications
-* ⌘ Command palette
+* 🔍 Code review
+* 🐛 Debugging assistance
+* ⚡ Code optimization
+* 🧪 Test generation
+* 📝 Documentation generation
+* 📊 Code-quality analysis
+* 🔀 AI diff review & controlled application
+* 🔐 Multi-user isolation
 * 🛡️ CSRF protection
-* 📂 Filename and path validation
-* 🚦 API rate limiting
-* 🧪 135 automated tests
-* 🗄️ SQLite database
-* ⚡ React + Vite frontend
-* 🐍 Flask backend
+* 📁 File/path validation
+* ⌘ Command palette
+* 🔔 Toast notifications
+
+The project has been implemented across **Phases 0–11**, with **135 automated tests currently passing**.
 
 ---
 
-# 📚 Documentation
+## ✨ Feature Highlights
 
-| Document                             | Description                                            |
-| ------------------------------------ | ------------------------------------------------------ |
-| [`PRD.md`](PRD.md)                   | Product requirements, goals, architecture, and roadmap |
-| [`CHANGELOG.md`](CHANGELOG.md)       | Phase-by-phase development history                     |
-| [`SECURITY.md`](SECURITY.md)         | Security policy and hardening information              |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Development setup and contribution guidelines          |
-| [`LICENSE`](LICENSE)                 | MIT License                                            |
+<table>
+<tr>
+<td width="50%">
+
+### 🧑‍💻 Development Workspace
+
+* Project CRUD
+* File CRUD
+* Virtual folders
+* Folder rename
+* Project search
+* Monaco Editor
+* Language selection
+* Save / Ctrl+S
+* Copy / Clear
+* Code formatting
+* Dark editor theme
+* Line numbers
+
+</td>
+
+<td width="50%">
+
+### 🤖 AI Development
+
+* AI Chat
+* Context selection
+* Explain Code
+* Generate Code
+* Debug Code
+* Code Review
+* Optimize Code
+* Generate Tests
+* Generate Documentation
+* Regenerate responses
+* Ask about selected code
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 🔐 Security
+
+* Multi-user isolation
+* Ownership enforcement
+* CSRF protection
+* Secure password hashing
+* Rate limiting
+* Signed authentication tokens
+* Session tampering protection
+* File extension validation
+* Path traversal protection
+* Generic authentication responses
+
+</td>
+
+<td>
+
+### 📊 Intelligence & UX
+
+* Code Analysis Dashboard
+* Quality scores
+* Complexity analysis
+* Issue severity breakdown
+* Review history
+* Quality trend
+* Diff review
+* Accept / Reject changes
+* Toast notifications
+* Shared loading states
+* Command palette
+
+</td>
+</tr>
+</table>
 
 ---
 
-# 🚀 Feature Overview
+# 🧭 Table of Contents
 
-## 🔐 Authentication
+* [Architecture](#-architecture)
+* [Implementation Progress](#-implementation-progress)
+* [Phase Breakdown](#-phase-breakdown)
+* [Multi-User Isolation](#-multi-user-isolation)
+* [Code Editor](#-code-editor)
+* [AI Architecture](#-ai-provider-architecture)
+* [AI Chat](#-ai-chat)
+* [Code Intelligence](#-code-intelligence)
+* [Diff Review](#-diff-review--controlled-ai-changes)
+* [Code Analysis Dashboard](#-code-analysis-dashboard)
+* [Security Hardening](#-security-hardening)
+* [Project Structure](#-project-structure)
+* [Running Locally](#-running-locally)
+* [Testing](#-testing)
+* [Authentication Flow](#-authentication-flow)
+* [Documentation](#-project-documentation)
+* [Current Status](#-project-status)
 
-The application provides a complete authentication workflow:
+---
 
-* User registration
+# 🏗 Architecture
+
+```text
+                         ┌─────────────────────────┐
+                         │        Browser          │
+                         │                         │
+                         │ React + Vite + Tailwind │
+                         │       Monaco Editor     │
+                         └────────────┬────────────┘
+                                      │
+                                      │ /api/*
+                                      ▼
+                         ┌─────────────────────────┐
+                         │       Flask API         │
+                         │                         │
+                         │ Authentication          │
+                         │ Projects / Files        │
+                         │ Conversations           │
+                         │ AI / Code Intelligence  │
+                         └────────────┬────────────┘
+                                      │
+                  ┌───────────────────┼───────────────────┐
+                  │                   │                   │
+                  ▼                   ▼                   ▼
+          ┌──────────────┐    ┌───────────────┐   ┌───────────────┐
+          │   Services   │    │    Models     │   │    Utils      │
+          │              │    │               │   │               │
+          │ AI           │    │ Users         │   │ Ownership     │
+          │ Chat         │    │ Projects      │   │ CSRF          │
+          │ Code         │    │ Files         │   │ Validation    │
+          │ Projects     │    │ Reviews       │   │               │
+          └──────┬───────┘    └───────┬───────┘   └───────────────┘
+                 │                     │
+                 ▼                     ▼
+        ┌─────────────────┐    ┌─────────────────┐
+        │ AI Providers    │    │    SQLite DB    │
+        │                 │    │                 │
+        │ Gemini          │    │ Users           │
+        │ Groq (stub)     │    │ Projects        │
+        │ OpenRouter      │    │ Files           │
+        │ Claude (stub)   │    │ Conversations   │
+        └─────────────────┘    │ Reviews         │
+                               │ Tests / Docs    │
+                               └─────────────────┘
+```
+
+The backend follows a **service-oriented architecture** so API routes remain thin while business logic lives in reusable services.
+
+---
+
+# 🚀 Implementation Progress
+
+```text
+Phase 00  ████████████████████  Scaffolding
+Phase 01  ████████████████████  Data Layer
+Phase 02  ████████████████████  Authentication
+Phase 03  ████████████████████  Multi-user Isolation
+Phase 04  ████████████████████  Projects & Files
+Phase 05  ████████████████████  Monaco Editor
+Phase 06  ████████████████████  AI Architecture
+Phase 07  ████████████████████  AI Chat
+Phase 08  ████████████████████  Code Intelligence
+Phase 09  ████████████████████  Diff + Analysis
+Phase 10  ████████████████████  UI Polish
+Phase 11  ████████████████████  Security Hardening
+```
+
+**11 phases completed • 135 tests passing**
+
+---
+
+# 🧩 Phase Breakdown
+
+<details>
+<summary><b>Phase 0 — Scaffolding</b></summary>
+
+* Flask application
+* React + Vite frontend
+* Tailwind CSS
+* Environment configuration
+* Development / testing / production configuration
+* Initial project structure
+
+</details>
+
+<details>
+<summary><b>Phase 1 — Data Layer</b></summary>
+
+Complete database model layer with:
+
+* Users
+* Projects
+* Files
+* Conversations
+* Messages
+* Code reviews
+* Code analysis
+* Generated tests
+* Documentation
+
+Foreign keys, indexes and cascading relationships are included.
+
+</details>
+
+<details>
+<summary><b>Phase 2 — Authentication</b></summary>
+
+Complete authentication flow:
+
+* Registration
 * Login
 * Logout
 * Email verification
-* Resend verification email
+* Resend verification
 * Forgot password
 * Password reset
 * Change password
 * Secure password hashing
-* Session-based authentication
-* Authentication rate limiting
-* Generic authentication responses to reduce account enumeration
+* Rate limiting
+* Session cookies
 
-Verification and password-reset tokens are signed, time-limited, and tracked as single-use tokens.
+Authentication responses are designed to reduce account enumeration.
+
+</details>
+
+<details>
+<summary><b>Phase 3 — Multi-User Isolation</b></summary>
+
+A centralized ownership contract ensures users can only access their own resources.
+
+The system deliberately returns **404** when a resource exists but belongs to another user.
+
+This prevents exposing whether another user's resource ID exists.
+
+</details>
+
+<details>
+<summary><b>Phase 4 — Projects & Files</b></summary>
+
+* Project CRUD
+* File CRUD
+* Virtual folders
+* Folder rename
+* Project search
+* Dashboard
+* Project workspace
+* Ownership checks
+
+Folders are represented through `folder_path` rather than a dedicated Folder table.
+
+</details>
+
+<details>
+<summary><b>Phase 5 — Monaco Editor</b></summary>
+
+A real Monaco-based editor provides:
+
+* Syntax-aware editing
+* Language selector
+* Dark theme
+* Line numbers
+* Copy
+* Clear
+* Format
+* Save
+* Ctrl/Cmd+S
+
+The Monaco runtime currently loads through its default CDN-based loader.
+
+</details>
+
+<details>
+<summary><b>Phase 6 — AI Provider Architecture</b></summary>
+
+The AI layer is provider-agnostic.
+
+```text
+AIService
+   │
+   ├── GeminiProvider       ✓ Implemented
+   ├── GroqProvider         ○ Stub
+   ├── OpenRouterProvider   ○ Stub
+   └── ClaudeProvider      ○ Stub
+```
+
+Routes and features communicate with `AIService`, not individual providers.
+
+This means additional providers can be implemented without rewriting the AI features.
+
+</details>
+
+<details>
+<summary><b>Phase 7 — AI Chat</b></summary>
+
+AI chat includes:
+
+* Persistent conversations
+* Persistent messages
+* Context selection
+* Current-file context
+* Selected-code context
+* Auto-titling
+* Regenerate
+* Failure-safe message persistence
+
+Context limits:
+
+```text
+Conversation history → max 10 messages
+Current file         → max 6,000 characters
+Selected code        → max 4,000 characters
+```
+
+A file from another project is rejected from the AI context.
+
+</details>
+
+<details>
+<summary><b>Phase 8 — Code Intelligence</b></summary>
+
+Seven AI-powered capabilities:
+
+| Feature       | Persistence | Purpose                              |
+| ------------- | ----------- | ------------------------------------ |
+| Explain       | Ephemeral   | Understand code                      |
+| Generate      | Ephemeral   | Generate code                        |
+| Debug         | Ephemeral   | Suggest corrections                  |
+| Review        | Persistent  | Analyze quality/security/performance |
+| Optimize      | Ephemeral   | Improve implementation               |
+| Tests         | Persistent  | Generate tests                       |
+| Documentation | Persistent  | Generate documentation               |
+
+AI responses are defensively parsed so malformed model output does not automatically become a server error.
+
+</details>
+
+<details>
+<summary><b>Phase 9 — Diff Review & Analysis</b></summary>
+
+AI-generated modifications no longer overwrite the editor immediately.
+
+Instead:
+
+```text
+AI Suggestion
+      │
+      ▼
+  Diff Editor
+      │
+ ┌────┴────┐
+ ▼         ▼
+Accept    Reject
+ │         │
+ ▼         ▼
+Draft     Discard
+Dirty     Change
+```
+
+The phase also introduced the Code Analysis Dashboard.
+
+</details>
+
+<details>
+<summary><b>Phase 10 — UI Polish</b></summary>
+
+* Toast notifications
+* Shared loading states
+* Shared empty states
+* Global command palette
+* Ctrl/Cmd+K
+* Project search
+* Project quick creation
+
+The UI now uses consistent interaction feedback across the application.
+
+</details>
+
+<details>
+<summary><b>Phase 11 — Security Hardening</b></summary>
+
+Concrete security gaps identified during an audit were addressed:
+
+* CSRF protection
+* File extension validation
+* Filename validation
+* Folder-path validation
+* Path traversal protection
+* Null-byte rejection
+* Mutating-route authentication audit
+* Rate-limit audit
+* Session tampering test
+
+**28 new tests** were added during this phase.
+
+</details>
 
 ---
 
-# 👥 Multi-User Data Isolation
+# 🔐 Multi-User Isolation
 
-Multi-user isolation is a core security requirement of the application.
+One of the project's core architectural contracts is ownership enforcement.
 
-Every user can access only their own:
+Two rules govern every resource:
 
-* Projects
-* Files
-* Conversations
-* Reviews
-* Generated tests
-* Documentation
-* Other owned resources
+### 01 — Ownership comes from the session
 
-Ownership enforcement is centralized in:
+The authenticated user's ID always comes from `current_user`.
 
-```text
-server/utils/ownership.py
-```
-
-This prevents individual routes from implementing inconsistent authorization logic.
-
-### Isolation Rules
-
-### 1. User ownership always comes from the session
-
-The application never trusts a `user_id` supplied by the client.
-
-The current user is obtained from the authenticated session.
-
-For example, if a client sends:
+Client-provided values such as:
 
 ```json
 {
@@ -109,152 +481,107 @@ For example, if a client sends:
 }
 ```
 
-the supplied user ID is ignored when determining ownership.
+cannot override ownership.
 
-### 2. Unauthorized resources return 404
+### 02 — Foreign resources behave like missing resources
 
-If a resource exists but belongs to another user, the application returns the same `404` response used for a nonexistent resource.
+If a resource exists but belongs to another user:
 
-This prevents clients from learning whether another user's resource exists.
+```text
+404 Not Found
+```
 
-### 3. Centralized ownership helpers
+instead of:
 
-Routes use:
+```text
+403 Forbidden
+```
+
+This avoids confirming that another user's resource exists.
+
+Centralized helpers:
 
 ```python
 get_owned_or_404(Model, id)
-```
-
-and:
-
-```python
 owned_query(Model)
 ```
 
-instead of unrestricted queries such as:
-
-```python
-Model.query.get(id)
-```
-
-or:
-
-```python
-Model.query.all()
-```
-
-### 4. File ownership has an additional project check
-
-A file must belong to:
-
-* The authenticated user
-* The project referenced by the route
-
-This prevents cross-project resource probing.
-
-The isolation system is covered by dedicated automated tests.
+are used instead of unrestricted queries.
 
 ---
 
-# 📁 Project & File Management
+# 📁 Folder Model
 
-Users can create and manage development projects and their files.
+There is intentionally **no Folder database table**.
 
-### Projects
-
-* Create projects
-* Rename projects
-* Delete projects
-* Search projects
-* Open project workspace
-
-### Files
-
-* Create files
-* Edit files
-* Save files
-* Delete files
-* Rename files
-* Select programming language
-* Organize files using virtual folders
-
----
-
-# 📂 Virtual Folders
-
-The application does not use a separate database table for folders.
-
-Instead, folders are represented through the `folder_path` stored with each file.
+A folder is represented by the shared `folder_path` of its files.
 
 Example:
 
 ```text
 src/
+├── main.py
 └── utils/
+    ├── auth.py
     └── helpers.py
 ```
 
-The file can have:
+Internally:
 
 ```text
-folder_path = "src/utils"
+main.py      → ""
+auth.py      → "src/utils"
+helpers.py   → "src/utils"
 ```
 
-### Folder Behavior
+Folder rename performs a bulk path rewrite across all nested files.
 
-* Folders exist only while they contain files.
-* Creating a file inside a new folder automatically creates the folder logically.
-* Renaming a folder updates the `folder_path` of all files beneath it.
-* Nested folders are supported.
-
-Example:
-
-```text
-src/utils/
-src/utils/auth/
-src/services/
-```
-
-Renaming:
-
-```text
-src/utils
-```
-
-to:
-
-```text
-src/helpers
-```
-
-updates all affected files and nested paths.
+Empty folders do not exist until a file is created inside them.
 
 ---
 
-# 💻 Monaco Code Editor
+# 🧑‍💻 Monaco Code Editor
 
-The editor is powered by **Monaco Editor**, the editor technology used by Visual Studio Code.
+The editor is built around Monaco:
 
-[Monaco Editor React](https://github.com/suren-atoyan/monaco-react?utm_source=chatgpt.com)
+```text
+@monaco-editor/react
+```
 
-### Editor Features
+Capabilities include:
 
+* Language selection
 * Syntax-aware editing
-* Language selector
-* Line numbers
-* Dark theme
+* Format
 * Copy
 * Clear
-* Format
-* Save
-* `Ctrl+S` / `Cmd+S`
-* Unsaved/dirty state
-* AI actions
-* Code selection support
+* Dark theme
+* Line numbers
+* Ctrl/Cmd+S
+* Dirty-state tracking
+* AI-assisted actions
+
+### Save model
+
+```text
+Edit
+ ↓
+Draft
+ ↓
+Dirty
+ ↓
+Save / Ctrl+S
+ ↓
+Persisted file
+```
+
+Changing the language is metadata and is persisted immediately.
+
+Code changes remain local until explicitly saved.
 
 ### Formatting
 
-The Format action is available for languages where Monaco provides built-in formatting support, including:
+Formatting is enabled only where Monaco provides a built-in formatter:
 
 * JavaScript
 * TypeScript
@@ -262,500 +589,234 @@ The Format action is available for languages where Monaco provides built-in form
 * HTML
 * CSS
 
-For unsupported languages, formatting is disabled rather than silently doing nothing.
-
-### Monaco CDN Note
-
-By default, the Monaco runtime is loaded through the package loader at browser runtime.
-
-Therefore, the first editor load requires internet access.
-
-The application itself can still run locally.
-
-A completely offline Monaco setup would require self-hosting Monaco assets through the loader configuration. This is intentionally not included in the current implementation.
+Other languages display an explanatory disabled state.
 
 ---
 
-# 🤖 AI Architecture
+# 🤖 AI Provider Architecture
 
-The AI system is designed to be **provider-agnostic**.
-
-The application communicates with an `AIService` abstraction instead of directly depending on a specific AI provider.
+The entire provider layer lives under:
 
 ```text
-AIService
-    │
-    ├── GeminiProvider
-    │
-    ├── GroqProvider
-    │
-    ├── OpenRouterProvider
-    │
-    └── ClaudeProvider
+server/services/ai/
 ```
 
-The architecture allows providers to be added without rewriting:
-
-* Routes
-* Chat functionality
-* Code-intelligence features
-* AI-related UI logic
-
----
-
-# 🔑 Gemini API Key Rotation
-
-Gemini is currently the implemented AI provider.
-
-Multiple Gemini API keys can be configured.
-
-Example:
-
-```env
-GEMINI_API_KEY_1=...
-GEMINI_API_KEY_2=...
-GEMINI_API_KEY_3=...
-GEMINI_API_KEY_4=...
+```text
+                 AIService
+                    │
+          ┌─────────┼─────────┐
+          │         │         │
+       Gemini     Groq    OpenRouter
+          │       stub       stub
+          │
+       key rotation
+          │
+       ┌──┴──┐
+       ▼     ▼
+     Key 1  Key 2 ...
 ```
 
-The provider rotates keys when failures indicate that another key may succeed.
+### Gemini Key Rotation
 
-Rotation occurs for:
+The Gemini provider rotates keys for:
 
-* `429` — rate limit
-* `401` — unauthorized/invalid key
-* `403` — rejected key
-* `5xx` — provider/server failure
-* Network-level failures
+* `429` rate limits
+* `401`
+* `403`
+* `5xx`
+* Network failures
 
-An ordinary `400 Bad Request` does **not** trigger rotation because retrying the same invalid request with every key would unnecessarily consume quota.
+It does **not** rotate on ordinary `400` errors because the same malformed request would fail regardless of which key is used.
 
-### Sticky Key Behavior
-
-Once a key successfully responds, it becomes the preferred key for subsequent requests.
-
-This avoids repeatedly starting from an already exhausted key.
+Once a key succeeds, it becomes the preferred key for subsequent calls.
 
 ---
 
 # 💬 AI Chat
 
-The application includes a persistent AI chat system.
+AI chat supports controlled context rather than blindly sending an entire project.
 
-Each conversation consists of:
+### Context
 
 ```text
 Conversation
-    │
-    └── Messages
-         ├── User
-         └── Assistant
+ └── Last 10 messages
+
+Current File
+ └── Max 6,000 characters
+
+Selected Code
+ └── Max 4,000 characters
 ```
 
-### Features
+Selected code takes precedence when both current-file and selection context are available.
 
-* Create conversations
-* Persistent message history
-* Automatic conversation titles
-* Context selection
-* Current-file context
-* Selected-code context
-* Regenerate responses
-* Provider error handling
+### Failure-safe persistence
 
----
+The user's message is stored **before** the AI request.
 
-# 🧠 Controlled AI Context
-
-The application intentionally limits how much project information is sent to the AI.
-
-The default context can contain:
-
-### Conversation History
-
-Up to:
-
-```text
-10 messages
-```
-
-### Current File
-
-When enabled:
-
-```text
-Maximum: 6,000 characters
-```
-
-### Selected Code
-
-When using:
-
-```text
-Ask about selection →
-```
-
-the selected code is limited to:
-
-```text
-Maximum: 4,000 characters
-```
-
-Selected code takes precedence because it represents a more specific user instruction.
-
----
-
-# 🔒 Context Isolation
-
-Files used as AI context are validated against the conversation's project.
-
-A file belonging to another project is silently excluded from the AI prompt.
-
-This prevents accidental cross-project information leakage.
-
----
-
-# 💾 Chat Failure Handling
-
-User messages are persisted **before** the AI provider is called.
-
-Therefore, if the AI provider becomes unavailable:
+Therefore:
 
 ```text
 User message
      ↓
-Saved to database
+Persist
      ↓
 AI request
-     ↓
-Provider failure
-```
-
-the user's message is not lost.
-
-The application returns an appropriate error while preserving the conversation state.
-
----
-
-# 🧠 AI Code Intelligence
-
-The application provides seven AI-powered development features:
-
-| Feature       | Persistence | Purpose                             |
-| ------------- | ----------- | ----------------------------------- |
-| Explain       | Ephemeral   | Explain code and its behavior       |
-| Generate      | Ephemeral   | Generate code from a description    |
-| Debug         | Ephemeral   | Identify problems and suggest fixes |
-| Review        | Persistent  | Review code quality and security    |
-| Optimize      | Ephemeral   | Suggest improved code               |
-| Tests         | Persistent  | Generate automated tests            |
-| Documentation | Persistent  | Generate documentation              |
-
-All features use the same `AIService` abstraction.
-
----
-
-# 🔍 Explain
-
-Analyzes the provided code and explains its behavior in natural language.
-
-The feature can provide information about:
-
-* Logic
-* Structure
-* Important functions
-* Dependencies
-* Potential issues
-* Code flow
-
----
-
-# ⚙️ Generate
-
-Generates code from a natural-language description.
-
-The system expects structured AI output but includes defensive parsing and raw-text fallback behavior when the model does not perfectly follow the expected format.
-
----
-
-# 🐛 Debug
-
-Analyzes code for potential problems and provides suggested corrections.
-
-Important:
-
-> AI-generated debugging results are suggestions, not guaranteed fixes.
-
-The application explicitly marks debugging corrections as suggestions.
-
----
-
-# 🔎 Code Review
-
-Provides AI-assisted code review with findings categorized by severity:
-
-* Critical
-* High
-* Medium
-* Low
-* Suggestion
-
-Code reviews can also produce scores from:
-
-```text
-0–100
-```
-
-for areas such as:
-
-* Quality
-* Security
-* Performance
-* Maintainability
-
-Reviews are persisted for future analysis.
-
----
-
-# ⚡ Optimize
-
-Analyzes code and generates an optimized version.
-
-The response contains:
-
-```text
-original_code
-optimized_code
-```
-
-The user can compare the two versions before applying the suggestion.
-
----
-
-# 🧪 Tests
-
-The application can generate tests based on the source code.
-
-Supported frameworks include:
-
-* pytest
-* unittest
-* Jest
-* Mocha
-* JUnit
-
-Generated tests can be saved as a new project file.
-
----
-
-# 📚 Documentation
-
-The AI can generate multiple documentation formats, including:
-
-* Docstrings
-* Code comments
-* README sections
-* API documentation
-
-Documentation is persisted for project history.
-
----
-
-# 🔀 AI Diff Review
-
-AI-generated code changes are **not automatically written into the editor**.
-
-Instead, the application opens a Monaco `DiffEditor`.
-
-```text
-Current Code
      │
-     ├──────────────┐
-     │              │
-     ▼              ▼
-Original         AI Suggestion
-     │              │
-     └──────┬───────┘
-            ▼
-        Diff Review
-        /         \
-    Accept       Reject
+     ├── Success → assistant response
+     │
+     └── Failure → message remains saved
 ```
 
-### Accept
+A provider outage does not silently erase what the user typed.
 
-Applying the change:
+---
 
-* Updates the editor draft
-* Marks the file as dirty
-* Requires an explicit Save
+# 🧠 Code Intelligence
 
-### Reject
+All seven capabilities share the same source-resolution and AI infrastructure.
 
-Rejecting the suggestion:
+| Capability       | Description                              |
+| ---------------- | ---------------------------------------- |
+| 🔎 Explain       | Understand existing code                 |
+| ✨ Generate       | Generate code from a description         |
+| 🐛 Debug         | Suggest corrections                      |
+| 🛡️ Review       | Find quality/security/performance issues |
+| ⚡ Optimize       | Produce an improved implementation       |
+| 🧪 Tests         | Generate framework-aware tests           |
+| 📝 Documentation | Generate documentation                   |
 
-* Leaves the draft unchanged
-* Does not modify the file
-* Does not trigger a save
+Supported generated-test frameworks include:
 
-This prevents AI-generated changes from silently overwriting user code.
+```text
+pytest
+unittest
+jest
+mocha
+junit
+```
+
+AI output is parsed defensively.
+
+The application does not assume the model will perfectly follow JSON or code-fence instructions.
+
+---
+
+# 🔀 Diff Review — Controlled AI Changes
+
+AI suggestions are never silently written into the saved file.
+
+Instead:
+
+```text
+Current Draft
+     │
+     │
+     ▼
+ AI Suggestion
+     │
+     ▼
+┌─────────────────────┐
+│   Monaco DiffEditor │
+│                     │
+│ Original │ Proposed │
+└──────────┬──────────┘
+           │
+      ┌────┴────┐
+      ▼         ▼
+   Accept     Reject
+      │         │
+      ▼         ▼
+ Dirty Draft  No Change
+```
+
+**Accept** applies the change to the editor draft.
+
+**Reject** discards it.
+
+The user still has to explicitly **Save** the modified file.
 
 ---
 
 # 📊 Code Analysis Dashboard
 
-The Code Analysis Dashboard provides project-level visibility into AI-assisted code reviews.
+The dashboard provides AI-assisted project-level analysis.
 
 It includes:
 
-* Latest quality score
+* Quality score
 * Security score
 * Performance score
 * Maintainability score
 * Complexity summary
-* Issues found
+* Issue count
 * Severity breakdown
 * Review history
 * Quality trend
 
-Scores are explicitly presented as:
-
-> **AI-assisted estimates, not certifications.**
-
-### Quality Trend
-
-The dashboard displays a trend across the latest:
+Severity levels:
 
 ```text
-10 reviews
+Critical
+High
+Medium
+Low
+Suggestion
 ```
 
-using a lightweight CSS sparkline.
+Scores are explicitly presented as **AI-assisted estimates**, not certifications.
 
-No additional charting library is required for this visualization.
-
----
-
-# 🗂️ Project History
-
-The application provides project-level history for:
-
-* Code Reviews
-* Generated Tests
-* Documentation
-
-List endpoints return lightweight records while detail endpoints provide the complete content.
-
-This keeps normal list responses smaller and more efficient.
-
----
-
-# 🔔 UI Notifications
-
-Phase 10 introduced a shared toast system.
-
-The application provides:
-
-```javascript
-useToast().success()
-useToast().error()
-useToast().info()
-```
-
-Toasts are:
-
-* Small
-* Stacked
-* Auto-dismissing
-* Displayed in the bottom-right corner
-
-Inline validation remains available for field-specific problems because it provides more useful feedback when the user needs to correct a particular field.
-
----
-
-# ⌘ Command Palette
-
-Press:
-
-```text
-Ctrl + K
-```
-
-on Windows/Linux or:
-
-```text
-Cmd + K
-```
-
-on macOS.
-
-The command palette allows users to:
-
-* Search projects
-* Navigate to projects
-* Create a project when no match exists
-
-The current implementation is intentionally focused on project-level actions.
-
-A future extension could provide a project-scoped:
-
-```text
-Ctrl/Cmd + P
-```
-
-quick-open file system.
+The dashboard also includes a lightweight CSS sparkline showing the quality trend across the latest reviews.
 
 ---
 
 # 🛡️ Security Hardening
 
-Phase 11 introduced targeted security hardening based on an actual application audit.
+Phase 11 focused on concrete audit findings.
 
 ## CSRF Protection
 
-The React frontend uses a double-submit cookie strategy.
-
-After login, the server sets:
+The API uses a double-submit cookie approach.
 
 ```text
-csrf_token
+Login
+  │
+  ▼
+csrf_token cookie
+  │
+  ▼
+Frontend reads cookie
+  │
+  ▼
+X-CSRF-Token header
+  │
+  ▼
+Authenticated mutation
 ```
 
-The frontend reads the token and sends it through:
+The server compares the cookie and header using:
 
-```http
-X-CSRF-Token: <token>
+```python
+hmac.compare_digest()
 ```
 
-for authenticated state-changing API requests.
-
-Protected methods include:
-
-```text
-POST
-PUT
-PATCH
-DELETE
-```
-
-The server compares the cookie and header using constant-time comparison.
-
-Authentication endpoints that operate before an authenticated session exists are exempt.
+State-changing authenticated API requests require the token.
 
 ---
 
-# 📂 File & Path Validation
+## File Validation
 
 File creation and rename operations validate:
 
-* File extensions
-* Filenames
-* Folder paths
+* Allowed extensions
+* Extensionless allowlisted filenames
+* `..` traversal segments
 * Null bytes
-* Path traversal
 * Path separators
+* Folder paths
 
-Dangerous values such as:
+Examples such as:
 
 ```text
 ../evil.py
@@ -763,9 +824,7 @@ Dangerous values such as:
 
 are rejected.
 
-The configured file-extension allowlist is also enforced.
-
-Extensionless files that are intentionally supported, such as:
+Common extensionless files such as:
 
 ```text
 Dockerfile
@@ -773,77 +832,36 @@ Makefile
 README
 ```
 
-can be handled through the explicit extensionless-name allowlist.
+remain supported through an explicit allowlist.
 
 ---
 
-# 🚦 Rate Limiting
+## Authentication Security
 
-Rate limiting is applied to sensitive and expensive operations.
+The application also includes:
 
-This includes areas such as:
-
-* Login
-* Registration
-* Password recovery
-* Email verification
-* AI operations
-
-Cheap authenticated CRUD operations are not unnecessarily rate-limited when the associated risk does not justify it.
-
----
-
-# 🔒 Session Security
-
-Flask's signed session cookies protect the authentication state.
-
-The test suite also verifies that a corrupted or tampered session cookie results in:
-
-```text
-401 Unauthorized
-```
-
-rather than an application crash or accidental authentication.
+* Werkzeug password hashing
+* Rate limiting
+* Signed tokens
+* Single-use verification/reset tokens
+* Time-limited tokens
+* Generic authentication responses
+* Session tampering tests
+* Generic production error responses
+* No plaintext passwords
 
 ---
 
-# 🧪 Defensive AI Response Parsing
-
-AI models do not always follow requested output formats perfectly.
-
-The application therefore never blindly trusts AI-generated JSON.
-
-Responses are parsed defensively with fallback behavior.
-
-For example:
-
-```text
-Expected JSON
-     ↓
-Parse
-     │
-     ├── Valid → Use structured result
-     │
-     └── Invalid → Best-effort fallback
-```
-
-This prevents malformed AI output from unnecessarily becoming a server error.
-
----
-
-# 🏗️ Architecture
-
-The project uses a unified repository layout rather than separate top-level `frontend/` and `backend/` wrapper folders.
+# 🗂 Project Structure
 
 ```text
 ai-coding-assistant/
 │
-├── src/                              # React + Vite + Tailwind
+├── src/
 │   ├── main.jsx
 │   ├── App.jsx
 │   ├── index.css
 │   │
-│   ├── assets/
 │   ├── components/
 │   │   ├── common/
 │   │   ├── auth/
@@ -859,36 +877,23 @@ ai-coding-assistant/
 │   ├── context/
 │   ├── hooks/
 │   ├── services/
-│   │   └── api.js
 │   └── utils/
 │
-├── server/                           # Flask backend
+├── server/
 │   ├── app.py
 │   ├── config.py
 │   ├── extensions.py
 │   │
 │   ├── api/
-│   │   ├── auth.py
-│   │   ├── projects.py
-│   │   ├── conversations.py
-│   │   ├── ai.py
-│   │   └── code.py
-│   │
 │   ├── models/
 │   ├── services/
 │   │   ├── auth/
 │   │   ├── ai/
-│   │   │   └── providers/
 │   │   ├── chat/
 │   │   ├── code/
 │   │   └── projects/
 │   │
 │   ├── utils/
-│   │   ├── ownership.py
-│   │   ├── csrf.py
-│   │   └── validation.py
-│   │
-│   ├── requirements.txt
 │   └── tests/
 │
 ├── data/
@@ -909,10 +914,7 @@ ai-coding-assistant/
 ├── postcss.config.js
 ├── index.html
 │
-├── app.py                             # Root launcher
 ├── .env.example
-├── .gitignore
-│
 ├── README.md
 ├── PRD.md
 ├── SECURITY.md
@@ -921,182 +923,54 @@ ai-coding-assistant/
 └── LICENSE
 ```
 
-### Why This Structure?
-
-The application keeps frontend and backend code in clearly organized directories while avoiding unnecessary wrapper layers such as:
-
-```text
-frontend/
-backend/
-```
-
-Backend imports remain concise:
-
-```python
-from models.user import User
-```
-
-rather than deeply nested imports.
-
-The root launcher provides a simple developer experience:
-
-```bash
-python app.py
-```
-
 ---
 
-# 🗄️ Data Layer
-
-The backend uses SQLAlchemy with SQLite for local development.
-
-The database is created automatically at:
-
-```text
-data/database/app.db
-```
-
-The data model includes entities for:
-
-* Users
-* Projects
-* Project files
-* Conversations
-* Messages
-* Code reviews
-* Code analysis
-* Generated tests
-* Documentation
-* Authentication-related records
-
-Foreign keys, indexes, and cascading relationships are used where appropriate.
-
----
-
-# 🔄 Application Flow
-
-```text
-                    ┌─────────────────┐
-                    │     Browser     │
-                    │ React + Monaco  │
-                    └────────┬────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │   Flask API     │
-                    │ Authentication  │
-                    │   Validation    │
-                    │   Rate Limit    │
-                    └────────┬────────┘
-                             │
-            ┌────────────────┼────────────────┐
-            ▼                ▼                ▼
-      ┌──────────┐    ┌────────────┐   ┌────────────┐
-      │ Services │    │ AI Service │   │  Database  │
-      └────┬─────┘    └─────┬──────┘   └────────────┘
-           │                │
-           │        ┌───────┼────────┐
-           │        ▼       ▼        ▼
-           │     Gemini   Groq   OpenRouter
-           │
-           ▼
-      Business Logic
-```
-
----
-
-# ⚙️ Requirements
-
-Before running the project, make sure you have:
-
-* Python 3.11+
-* Node.js
-* npm
-* Git
-
-Check:
-
-```bash
-python --version
-node --version
-npm --version
-```
-
----
-
-# 🚀 Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repository-url>
-cd ai-coding-assistant
-```
-
-Install backend dependencies:
-
-```bash
-pip install -r server/requirements.txt
-```
-
-Install frontend dependencies:
-
-```bash
-npm install
-```
-
-Create the environment file:
-
-```text
-.env.example → .env
-```
-
-Configure the required environment variables.
-
----
-
-# ▶️ Running the Application
+# ⚡ Running Locally
 
 ## Recommended — Single Command
 
-From the project root:
-
 ```bash
+pip install -r server/requirements.txt
+
+cp .env.example .env
+
 python app.py
 ```
 
-The root launcher can:
+The root `app.py`:
 
-1. Check frontend dependencies.
-2. Build the React application when required.
-3. Start Flask.
-4. Serve the API.
-5. Serve the built React frontend.
+1. Installs frontend dependencies when required
+2. Builds the React application when `dist/` is missing
+3. Starts Flask
+4. Serves the API
+5. Serves the built React application
 
-The application is available at:
+The application runs at:
 
 ```text
 http://localhost:5000
 ```
 
-No separate frontend server is required for normal usage.
+SQLite is created automatically at:
+
+```text
+data/database/app.db
+```
 
 ---
 
-# ⚡ Frontend Development Mode
+## 🔥 Frontend Development Mode
 
-When actively developing the React interface, use Vite's hot reload.
+For active frontend development:
 
-### Terminal 1 — Backend
+### Terminal 1
 
 ```bash
 cd server
 python app.py
 ```
 
-### Terminal 2 — Frontend
-
-From the project root:
+### Terminal 2
 
 ```bash
 npm run dev
@@ -1108,51 +982,73 @@ Vite runs at:
 http://localhost:5173
 ```
 
-and proxies API requests to Flask.
+and proxies:
 
-This mode provides immediate frontend updates without rebuilding the production bundle after every change.
+```text
+/api/*
+```
+
+to Flask on:
+
+```text
+http://localhost:5000
+```
 
 ---
 
-# 🗃️ Database
+# 🧪 Testing
 
-The default development database is:
+Run:
 
-```text
-data/database/app.db
+```bash
+cd server
+python -m pytest tests/ -v
 ```
 
-It is created automatically.
+Current suite:
 
-The project currently uses SQLite for simplicity and local development.
+```text
+135 passing tests
+```
 
-A production deployment can later migrate to a dedicated relational database such as PostgreSQL.
+Coverage includes:
+
+| Area                       | Tests |
+| -------------------------- | ----: |
+| Authentication             |    17 |
+| Multi-user isolation       |    20 |
+| Projects / files / folders |    10 |
+| AI provider layer          |    18 |
+| AI chat                    |    13 |
+| Code intelligence          |    18 |
+| Analysis / project history |     9 |
+| CSRF                       |    10 |
+| File / path validation     |    17 |
+| Service-layer tests        |     3 |
+
+The test suite specifically covers security boundaries, ownership isolation, AI failure handling, malformed model output, CSRF, file validation, and session tampering.
 
 ---
 
 # 🔑 Gemini Configuration
 
-To enable real AI responses, configure at least:
+AI functionality requires a Gemini API key.
+
+Add to `.env`:
 
 ```env
-GEMINI_API_KEY_1=your-api-key
+GEMINI_API_KEY_1=your_key_here
 ```
 
-Additional keys can be configured:
+Additional keys can be configured for rotation.
 
-```env
-GEMINI_API_KEY_2=your-api-key
-GEMINI_API_KEY_3=your-api-key
-GEMINI_API_KEY_4=your-api-key
-```
+Check provider configuration:
 
-The provider configuration can be checked through:
-
-```text
+```http
 GET /api/ai/providers
 ```
 
-The Gemini provider should report:
+A configured Gemini provider should report:
 
 ```json
 {
@@ -1160,602 +1056,237 @@ The Gemini provider should report:
 }
 ```
 
-when a valid key is detected by the application configuration.
-
-> Never commit API keys to Git.
+The actual Gemini API tests use mocked HTTP requests so provider rotation can be tested deterministically without depending on external network availability.
 
 ---
 
-# 📧 Email Development Mode
-
-Email sending is suppressed by default for local development.
-
-```env
-MAIL_SUPPRESS_SEND=true
-```
-
-With this enabled, verification and password-reset links are logged to the backend console rather than sent through SMTP.
-
-For actual email delivery, configure the required `MAIL_*` variables and disable suppression.
-
----
-
-# 🧑‍💻 Trying the Application
-
-## Authentication
-
-1. Open `/register`.
-2. Create an account.
-3. Check the Flask console for the verification link.
-4. Open the verification URL.
-5. Log in.
-6. Open the dashboard.
-
-To test password recovery:
+# 🔐 Authentication Flow
 
 ```text
-/forgot-password
+Register
+   │
+   ▼
+Verification Email
+   │
+   ▼
+Verify Account
+   │
+   ▼
+Login
+   │
+   ▼
+Dashboard
+   │
+   ├── Projects
+   ├── Files
+   ├── AI Chat
+   └── Code Intelligence
 ```
 
-Then use the reset link printed by the development server.
-
----
-
-# 📁 Trying Projects & Files
-
-1. Log in.
-2. Select **+ New Project**.
-3. Open the project.
-4. Select **+ New File**.
-5. Enter a filename.
-6. Optionally specify a folder such as:
-
-   ```text
-   src/utils
-   ```
-7. Edit the code.
-8. Save using **Save** or:
-
-   ```text
-   Ctrl/Cmd + S
-   ```
-
-You can also:
-
-* Rename files
-* Delete files
-* Rename folders
-* Rename projects
-* Delete projects
-* Search projects
-
----
-
-# 💬 Trying AI Chat
-
-Configure:
-
-```env
-GEMINI_API_KEY_1=...
-```
-
-Then:
-
-1. Open a project.
-2. Create a new chat.
-3. Ask a question.
-4. Enable current-file context if required.
-5. Select code in Monaco.
-6. Use **Ask about selection →**.
-7. Regenerate responses when needed.
-
-Without an AI key, the application intentionally handles the provider failure path rather than crashing.
-
----
-
-# 🧠 Trying Code Intelligence
-
-Open a project and file, then select:
+Password recovery:
 
 ```text
-Analyze ✨
+Forgot Password
+       │
+       ▼
+Reset Token
+       │
+       ▼
+Reset Password
+       │
+       ▼
+Login
 ```
 
-Available actions include:
-
-```text
-Explain
-Generate
-Debug
-Review
-Optimize
-Tests
-Documentation
-```
-
-The AI operates on the current editor content, including unsaved changes.
+During local development, email delivery is suppressed by default and links are printed to the backend console.
 
 ---
 
-# 🔀 Trying AI Diff Review
+# 📚 Project Documentation
 
-For actions such as:
+The repository includes dedicated documentation:
 
-* Optimize
-* Debug
-* Generate
-
-the AI suggestion can be opened in the diff-review interface.
-
-Review the proposed changes and choose:
-
-```text
-Accept
-```
-
-or:
-
-```text
-Reject
-```
-
-Accepting a change updates the draft but does not automatically save the file.
+| File                 | Purpose                     |
+| -------------------- | --------------------------- |
+| `README.md`          | Project overview & usage    |
+| `PRD.md`             | Product requirements        |
+| `CHANGELOG.md`       | Phase-by-phase history      |
+| `SECURITY.md`        | Security policy & checklist |
+| `CONTRIBUTING.md`    | Development conventions     |
+| `LICENSE`            | MIT License                 |
+| `docs/architecture/` | Architecture documentation  |
+| `docs/api/`          | API reference               |
+| `docs/development/`  | Development setup           |
 
 ---
 
-# 📊 Trying Code Analysis
+# 🖼️ Screenshots
 
-Run a code review first.
-
-Then open:
+Place project screenshots inside:
 
 ```text
-📊 Code Analysis
+screenshots/
+├── dashboard.png
+├── workspace.png
+├── code-editor.png
+├── ai-chat.png
+├── code-review.png
+├── diff-review.png
+├── analysis-dashboard.png
+└── command-palette.png
 ```
 
-The dashboard can display:
+Then display them here:
 
-* Quality score
-* Security score
-* Performance score
-* Maintainability score
-* Complexity
-* Issue counts
-* Severity breakdown
-* Review history
-* Quality trend
+<p align="center">
+  <img src="screenshots/dashboard.png" width="48%"/>
+  <img src="screenshots/workspace.png" width="48%"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/ai-chat.png" width="48%"/>
+  <img src="screenshots/analysis-dashboard.png" width="48%"/>
+</p>
+
+> Replace these filenames with the actual screenshots present in the repository.
 
 ---
 
-# ⌘ Trying the Command Palette
+# 🧭 Current Project Status
 
-Press:
-
-```text
-Ctrl + K
-```
-
-or:
+### ✅ Completed
 
 ```text
-Cmd + K
+Scaffolding              ✓
+Data Layer               ✓
+Authentication           ✓
+Multi-user Isolation     ✓
+Project Management       ✓
+File Management          ✓
+Monaco Editor            ✓
+AI Provider Layer        ✓
+Gemini Key Rotation      ✓
+AI Chat                  ✓
+Code Intelligence        ✓
+Diff Review              ✓
+Analysis Dashboard       ✓
+UI Polish                ✓
+CSRF Protection          ✓
+File Validation          ✓
+Security Audit Pass      ✓
+Automated Tests          ✓
 ```
-
-Search for an existing project or enter a new project name to create one.
-
-Use:
-
-```text
-↑ ↓
-```
-
-to navigate results and:
-
-```text
-Enter
-```
-
-to open or create the selected project.
 
 ---
 
-# 🧪 Testing
+# 🔭 What's Next?
 
-Run the backend test suite:
+There is no additional numbered phase in the original implementation plan.
 
-```bash
-cd server
-python -m pytest tests/ -v
-```
+Future work is therefore considered **ongoing engineering**, rather than another predefined phase.
 
-The current suite contains **135 tests** covering major application areas, including:
-
-| Area                   |   Tests |
-| ---------------------- | ------: |
-| Authentication         |      17 |
-| Multi-user isolation   |      20 |
-| Projects/files/folders |      10 |
-| AI provider layer      |      18 |
-| AI chat                |      13 |
-| Code intelligence      |      18 |
-| Analysis/history       |       9 |
-| CSRF                   |      10 |
-| File/path validation   |      17 |
-| Service-layer tests    |       3 |
-| **Total**              | **135** |
-
-The tests cover both happy paths and important failure/security scenarios.
-
----
-
-# 🧪 Testing Philosophy
-
-The test suite verifies more than whether endpoints return successful responses.
-
-It also tests:
-
-* Cross-user access attempts
-* Ownership enforcement
-* Missing resources
-* Invalid inputs
-* AI provider failures
-* Malformed AI responses
-* Session tampering
-* CSRF protection
-* File path traversal
-* Invalid extensions
-* API error handling
-* Route protection
-* Service-layer behavior
-
----
-
-# 🔐 Security Considerations
-
-The application implements several security controls, but it should **not** be considered production-security certified.
-
-Current protections include:
-
-* Session authentication
-* Password hashing
-* Signed tokens
-* Token expiration
-* Single-use reset/verification tokens
-* Multi-user ownership enforcement
-* CSRF protection
-* Input validation
-* Filename validation
-* Path traversal protection
-* API rate limiting
-* Request validation
-* Generic error responses
-* Parameterized database queries
-* Environment-based secrets
-* No arbitrary code execution
-* No arbitrary file uploads
-
-See [`SECURITY.md`](SECURITY.md) for the security policy.
-
----
-
-# ⚠️ Security Status
-
-Security hardening is not something that can realistically be declared "finished."
-
-Phase 11 addressed specific vulnerabilities and hardening gaps discovered during an application audit, including:
-
-* Previously unused file-extension allowlist
-* Missing CSRF protection
-* Missing file/path validation
-* Route protection verification
-* Rate-limit coverage review
-* Session-tampering test coverage
-
-Further security work should include:
+Potential production-focused work includes:
 
 * Dependency vulnerability scanning
-* Regular dependency updates
-* Production secret management
+* `pip-audit`
+* `npm audit`
 * Professional penetration testing
-* Infrastructure security review
-* Deployment hardening
-* Monitoring and alerting
-
-These are outside the scope of a single development pass.
-
----
-
-# 📈 Project Status
-
-## Phase 0 — Scaffolding
-
-✅ Completed
-
-* Flask application
-* React + Vite
-* Tailwind CSS
-* Environment configuration
-* Development/test/production configuration
-
-## Phase 1 — Data Layer
-
-✅ Completed
-
-* Database models
-* Foreign keys
-* Indexes
-* Relationships
-* Cascading deletes
-
-## Phase 2 — Authentication
-
-✅ Completed
-
-* Registration
-* Login/logout
-* Email verification
-* Password recovery
-* Password reset
-* Password change
-* Password hashing
-* Sessions
-* Rate limiting
-
-## Phase 3 — Multi-User Isolation
-
-✅ Completed
-
-* Centralized ownership enforcement
-* Cross-user isolation
-* Isolation tests
-* Session-derived ownership
-
-## Phase 4 — Project & File Management
-
-✅ Completed
-
-* Project CRUD
-* File CRUD
-* Virtual folders
-* Search
-* Workspace UI
-
-## Phase 5 — Code Editor
-
-✅ Completed
-
-* Monaco Editor
-* Language selection
-* Formatting
-* Copy
-* Clear
-* Save
-* Keyboard shortcuts
-* Dirty state
-
-## Phase 6 — AI Architecture
-
-✅ Completed
-
-* AIService abstraction
-* Gemini provider
-* Gemini key rotation
-* Provider stubs
-* Provider discovery endpoint
-
-## Phase 7 — AI Chat
-
-✅ Completed
-
-* Persistent conversations
-* Message history
-* Context selection
-* Current-file context
-* Selection context
-* Auto-titling
-* Regeneration
-* Provider failure handling
-
-## Phase 8 — Code Intelligence
-
-✅ Completed
-
-* Explain
-* Generate
-* Debug
-* Review
-* Optimize
-* Tests
-* Documentation
-
-## Phase 9 — Diff & Analysis
-
-✅ Completed
-
-* Monaco Diff Editor
-* Accept/reject workflow
-* Code Analysis Dashboard
-* Review history
-* Generated test history
-* Documentation history
-* Quality trends
-
-## Phase 10 — UI Polish
-
-✅ Completed
-
-* Toast notifications
-* Shared loading states
-* Shared empty states
-* Command palette
-
-## Phase 11 — Security Hardening
-
-✅ Completed
-
-* CSRF protection
-* File-extension validation
-* Filename validation
-* Folder-path validation
-* Path traversal protection
-* Route security audit
-* Rate-limit audit
-* Session tampering test
-
----
-
-# 🗺️ Future Roadmap
-
-Although the original phased specification is complete, development can continue with additional improvements.
-
-### AI Providers
-
-* Complete Groq integration
-* Complete OpenRouter integration
-* Complete Claude integration
-* Provider health monitoring
-* Automatic provider fallback
-
-### Developer Experience
-
-* Quick file search
-* `Ctrl/Cmd + P`
-* Multi-file editing
-* Workspace tabs
-* Code autocomplete
-* Improved syntax intelligence
-* Keyboard shortcut customization
-
-### AI Features
-
-* Project-wide AI context
-* Repository-aware search
-* Embeddings
-* RAG
-* AI memory
-* Agentic coding workflows
-* Multi-file AI changes
-* Automated refactoring
-
-### Code Analysis
-
-* Static analysis integration
-* Security scanning
-* Dependency analysis
-* Code duplication detection
-* Cyclomatic complexity analysis
-* Technical debt tracking
-
-### Production
-
-* PostgreSQL support
-* Redis integration
-* Background task processing
-* Production email service
-* Containerization
-* CI/CD
-* Observability
+* Production secrets management
 * Monitoring
-* Automated backups
+* Alerting
+* Production deployment hardening
+* Additional AI provider implementations
+* Offline/self-hosted Monaco assets
+* More advanced code analysis
+* Project-scoped quick file search
+* Additional AI history persistence
+
+The project intentionally does **not** claim that security is ever "finished."
 
 ---
 
-# ⚠️ Current Limitations
+# 📈 Engineering Principles
 
-The current implementation has several intentional limitations:
-
-* Gemini is the primary implemented AI provider.
-* Groq, OpenRouter, and Claude providers are currently stubs.
-* Monaco normally requires browser access to load its runtime.
-* SQLite is intended primarily for local development.
-* AI responses are probabilistic and can contain incorrect suggestions.
-* AI code fixes are not guaranteed to be correct.
-* Code-analysis scores are AI-assisted estimates.
-* No professional penetration test has been performed.
-* Dependency vulnerability scanning is still an ongoing operational requirement.
-* Production infrastructure hardening is outside the scope of the current project.
-
----
-
-# 🏆 Project Goals
-
-The project demonstrates how to build a complete AI-powered development platform while addressing both functionality and engineering concerns.
-
-It combines:
+This project follows several core principles:
 
 ```text
-React
-  +
-Flask
-  +
-SQLAlchemy
-  +
-Monaco Editor
-  +
-Machine/AI Services
-  +
-Authentication
-  +
-Multi-user Isolation
-  +
-Security
-  +
-Testing
+Security by default
+        +
+Explicit user control
+        +
+Centralized ownership
+        +
+Provider abstraction
+        +
+Defensive AI parsing
+        +
+Tested business logic
+        +
+Thin API routes
+        +
+Clear separation of concerns
 ```
 
-The goal is not simply to create an AI chatbot around a code editor.
+AI suggestions are treated as **suggestions**, not guaranteed truth.
 
-The goal is to demonstrate a **structured, extensible development platform** where AI functionality is integrated into project management, code editing, code analysis, testing, documentation, and developer workflows.
+Users remain in control of:
 
----
-
-# 🤝 Contributing
-
-Contributions are welcome.
-
-Before contributing, read:
-
-* [`CONTRIBUTING.md`](CONTRIBUTING.md)
-* [`SECURITY.md`](SECURITY.md)
-* [`PRD.md`](PRD.md)
-
-For security vulnerabilities, please follow the private reporting process described in `SECURITY.md` rather than opening a public issue.
+* What code is sent to AI
+* What changes are applied
+* When code is saved
+* Which projects they access
+* Which AI provider is used
 
 ---
+# 👨‍💻 Author
 
-# 📜 License
+<div align="center">
+
+### **Abaid-ur-Rehman**
+
+**Machine Learning Engineer · Python Developer · AI & Computer Vision Enthusiast**
+
+I’m **Abaid-ur-Rehman**, a developer focused on building practical AI-powered applications, intelligent software systems, and modern full-stack development tools.
+
+This project was designed and developed with a focus on:
+
+* 🤖 AI-assisted software development
+* 🧑‍💻 Developer productivity
+* 🧠 Code intelligence
+* 🔐 Secure multi-user architecture
+* 🏗️ Clean and maintainable backend design
+* ⚡ Modern, responsive user experiences
+
+<br>
+
+<a href="https://github.com/abaid6790">
+  <img src="https://img.shields.io/badge/GitHub-abaid6790-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+</div>
+
+---
+# 📄 License
 
 This project is licensed under the **MIT License**.
 
-See [`LICENSE`](LICENSE) for details.
+Before publishing the repository publicly, replace the placeholder author/contact information in:
+
+```text
+LICENSE
+SECURITY.md
+```
 
 ---
 
-# 👨‍💻 Author
+<div align="center">
 
-**Abaid-ur-Rehman**
+### Built with Python, Flask, React, Monaco and AI
 
-AI / Machine Learning Engineer & Python Developer
+<img src="https://capsule-render.vercel.app/api?type=waving&height=130&section=footer&color=0:0f172a,50:1e293b,100:0f766e&animation=fadeIn" width="100%"/>
 
-Built as a portfolio-focused implementation of a complete AI-assisted software development environment.
+**AI Coding Assistant**
 
----
+*Build smarter. Review carefully. Stay in control.*
 
-# ⭐ Support the Project
-
-If you find this project useful or interesting:
-
-* ⭐ Star the repository
-* 🍴 Fork the project
-* 🐛 Report bugs
-* 💡 Suggest improvements
-* 🤝 Contribute
-* 📚 Use it as a learning reference
-
----
-
-<p align="center">
-
-**AI Coding Assistant — Build smarter. Code faster.**
-
-</p>
+</div>

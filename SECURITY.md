@@ -34,7 +34,8 @@ check first and what's still open.
 | File validation | Filename/folder-path structural checks (no path traversal, null bytes, path separators) and an extension allowlist, enforced at the API boundary |
 | Error handling | Generic error responses to clients; real exceptions logged server-side only, never returned with stack traces |
 | Secrets | All credentials (`SECRET_KEY`, mail credentials, Gemini API keys) come from environment variables, never hardcoded; `.env` is gitignored |
-| AI response handling | User-submitted code is never executed; AI-generated code changes require explicit user review/accept via a diff view before being applied |
+| AI response handling | AI-generated code changes require explicit user review/accept via a diff view before being applied — never auto-applied |
+| Code execution (Run Code feature) | User-submitted code runs in a separate OS process (never `exec()`/`eval()` inside the Flask process) with a scrubbed environment (no app secrets reachable — `SECRET_KEY`, API keys, DB credentials are never passed through), a fresh temp directory per run, a 10s wall-clock timeout, an output-size cap, and (Phase 17) a concurrency cap so one user can't exhaust the server with simultaneous runs. On timeout or the output cap, the **entire process tree is killed** (not just the direct child — closed a gap Phase 12 had explicitly documented as open), verified by an actual test that spawns a grandchild process and confirms it's dead afterward, not just assumed. On POSIX, a memory ceiling and CPU-time ceiling are also enforced as a backstop (deliberately **not** applied to JavaScript — Node's V8 engine reserves large virtual address space upfront that a small memory ceiling would break; discovered by this phase's own tests failing, not assumed safe). See `server/services/execution/common.py`'s docstring for exactly what this does and does not cover — it's process isolation, not container/VM sandboxing (see Known gaps below) |
 
 ## Known gaps (not yet done)
 
@@ -55,6 +56,24 @@ Being upfront about these matters more than padding the list above:
 - The three stub AI providers (Groq, OpenRouter, Claude) are
   architecture only — verify their real implementations against this
   same checklist before enabling them.
+- **Code execution (Run Code feature) is process isolation, not a
+  container/VM sandbox.** As of Phase 17: memory/CPU ceilings (POSIX
+  only — Python only, not JavaScript, see the table above) and
+  whole-process-tree killing on timeout are both in place now. What's
+  still genuinely missing: **no network isolation** (executed code can
+  make outbound network requests — deliberately not attempted with a
+  partial in-process measure, since that would create false confidence
+  rather than real protection; this needs an actual container/VM),
+  **no filesystem access restriction** beyond running in an empty temp
+  directory (the code can still read any path the server process has
+  OS permission to read), **no memory/CPU ceiling on Windows** (no
+  stdlib equivalent to POSIX's `resource` module without adding a
+  dependency), and **the concurrency cap is per-process**, not global
+  across a multi-worker deployment — same caveat the rate limiter
+  already has. This is explicitly a development-stage mechanism (see
+  `server/services/execution/common.py`'s docstring); do not expose it
+  to untrusted users in production without adding real sandboxing (a
+  container per run, gVisor, Firecracker, or similar) first.
 
 If you're taking this to production, treat the above as your starting
 checklist, not a to-do list to skip.

@@ -7,6 +7,12 @@ const LANGUAGES = [
   "php", "html", "css", "sql", "json", "markdown", "text",
 ];
 
+// Backend support (server/services/execution/) — currently Python and
+// JavaScript (Node). Kept as a small local constant rather than an API
+// call since it changes rarely and the Run button needs it
+// synchronously to decide whether to enable itself.
+const RUNNABLE_LANGUAGES = new Set(["python", "javascript"]);
+
 export default function CodeEditor({
   value,
   language,
@@ -16,6 +22,8 @@ export default function CodeEditor({
   onClear,
   onSendSelection,
   onOpenAiActions,
+  onRun,
+  running,
 }) {
   const editorRef = useRef(null);
   const [copied, setCopied] = useState(false);
@@ -25,6 +33,11 @@ export default function CodeEditor({
     // Ctrl/Cmd+S saves instead of triggering the browser's save-page dialog.
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () => {
       onSave?.();
+    });
+    // Ctrl/Cmd+Enter runs the code — the standard shortcut in most
+    // browser-based editors/notebooks for this exact action.
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+      onRun?.();
     });
   };
 
@@ -124,6 +137,26 @@ export default function CodeEditor({
         </button>
 
         <span className="ml-auto text-[11px] text-gray-600">⌘/Ctrl+S to save</span>
+
+        <button
+          onClick={onRun}
+          disabled={running || !RUNNABLE_LANGUAGES.has(language)}
+          title={
+            RUNNABLE_LANGUAGES.has(language)
+              ? "Run this code (⌘/Ctrl+Enter)"
+              : `Running ${language || "this language"} isn't supported yet — only Python for now`
+          }
+          className="flex items-center gap-1.5 rounded-md bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-500 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          {running ? (
+            <>
+              <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+              Running…
+            </>
+          ) : (
+            <>▶ Run Code</>
+          )}
+        </button>
       </div>
 
       <div className="flex-1">
