@@ -1144,11 +1144,11 @@ Then display them here:
 </p>
 
 <p align="center">
-  <img src="screenshots/ai-chat.png" width="48%"/>
+  <img src="screenshots/Login.png" width="48%"/>
   <img src="screenshots/output.png" width="48%"/>
 </p>
 
-> Replace these filenames with the actual screenshots present in the repository.
+
 
 ---
 
