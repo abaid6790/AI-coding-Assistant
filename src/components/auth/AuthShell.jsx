@@ -1,8 +1,15 @@
 export function AuthShell({ title, subtitle, children }) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-surface-950 px-4">
-      <div className="w-full max-w-sm rounded-lg border border-surface-700 bg-surface-900 p-8 shadow-xl">
-        <h1 className="text-xl font-semibold text-gray-100">{title}</h1>
+    <div className="auth-shell flex min-h-screen items-center justify-center px-4 py-8">
+      <div className="auth-card w-full max-w-sm p-8">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="auth-mark">AI</div>
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-400">Developer Studio</div>
+            <div className="text-xs text-gray-500">AI Coding Assistant</div>
+          </div>
+        </div>
+        <h1 className="text-2xl font-semibold tracking-tight text-gray-100">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-gray-400">{subtitle}</p>}
         <div className="mt-6">{children}</div>
       </div>

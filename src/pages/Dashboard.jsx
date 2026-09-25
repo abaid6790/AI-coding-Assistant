@@ -98,7 +98,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-surface-950 text-gray-100">
       <header className="flex items-center justify-between border-b border-surface-700 bg-surface-900 px-6 py-4">
-        <span className="font-semibold">AI Coding Assistant</span>
+        <div className="flex items-center gap-3"><span className="auth-mark !h-8 !w-8 !rounded-lg !text-[11px]">AI</span><div><div className="font-semibold tracking-tight">AI Coding Assistant</div><div className="text-[10px] uppercase tracking-[0.18em] text-gray-600">Developer Studio</div></div></div>
         <div className="flex items-center gap-4 text-sm text-gray-400">
           <AiProviderBadge />
           <span className="hidden text-xs text-gray-600 sm:inline">
@@ -114,13 +114,13 @@ export default function Dashboard() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl p-6">
+      <main className="mx-auto max-w-6xl p-6 lg:p-8">
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h1 className="text-lg font-medium">
+            <h1 className="text-2xl font-semibold tracking-tight">
               Welcome{user?.display_name ? `, ${user.display_name}` : ""}.
             </h1>
-            <p className="mt-1 text-sm text-gray-400">
+            <p className="mt-1 text-sm text-gray-500">
               {projects.length} project{projects.length === 1 ? "" : "s"}
             </p>
           </div>

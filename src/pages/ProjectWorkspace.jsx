@@ -268,7 +268,7 @@ export default function ProjectWorkspace() {
             ← Dashboard
           </Link>
           <span className="text-gray-600">/</span>
-          <span className="font-medium">{project?.name}</span>
+          <span className="font-semibold tracking-tight">{project?.name}</span>
         </div>
         <div className="flex items-center gap-2">
           <button
